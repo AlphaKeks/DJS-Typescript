@@ -1,11 +1,11 @@
-import { Client } from "discord.js";
+import { ActivityType, Client } from 'discord.js'
 
-module.exports = {
-	name: "ready",
-	once: true,
+export default {
+	name: 'ready',
 
 	execute(client: Client) {
-		console.log(`${client.user?.tag} is now online.`);
-		client.user?.setActivity("with my balls", { type: "PLAYING" });
-	},
-};
+		client.user!.setActivity('☕ ~Lofi Beats~', { type: ActivityType.Listening })
+
+		console.log(`${client.user!.tag} is now online.`)
+	}
+}
